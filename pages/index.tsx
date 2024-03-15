@@ -3,8 +3,12 @@ import {
   fetchBySlug,
   ExperienceRoot,
   createExperience,
+  defineComponents,
 } from "@contentful/experiences-sdk-react";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { buttonDefinition } from "../components/designSystem/button";
+import { headingDefinition } from "../components/designSystem/heading";
+import { heroDefinition } from "../components/designSystem/hero";
 
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW_API_TOKEN!;
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!;
@@ -51,3 +55,7 @@ export const getServerSideProps = async ({}: GetServerSidePropsContext) => {
 };
 
 export default Experience;
+
+// Define the components for the experience
+// @see https://github.com/contentful/experience-builder/wiki#register-your-component
+defineComponents([headingDefinition, buttonDefinition, heroDefinition]);

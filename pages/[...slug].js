@@ -1,6 +1,6 @@
-import { Experience } from "@/components/experiences";
+import { Experience } from "@/pages/index";
 
-export default function Page({ params }: { params: { slug: string[] } }) {
+export default function Page({ params }) {
   const slug = params.slug?.join("/") || "/";
   return (
     <main className="mb-24">
