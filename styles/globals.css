@@ -17,14 +17,31 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  h1 {
+    @apply text-9xl font-semibold;
+    @apply mb-3 mt-0;
+    line-height: 1;
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+    @apply mb-8 mt-10;
+  }
+  h3 {
+    @apply text-xl font-semibold;
+    @apply mb-2 mt-6;
+  }
+  h4 {
+    @apply text-lg font-semibold;
+  }
+
+  p + p {
+    @apply mb-2
+  }
+}
+
 
 @layer utilities {
   .text-balance {
